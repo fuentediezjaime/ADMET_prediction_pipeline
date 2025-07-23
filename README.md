@@ -12,6 +12,8 @@ To start, we'd like to know if there is any structure on the dataset that can be
 Still, this is heavily dependent on the ordering of the molecules, which may hide the presence of the clusters. Thus, we use hierarchical clustering using the already computed Tanimoto distance. To find the optimum number of clusters to divide the dataset, we search for an equilibrium of "compactness" within each group as well as mutual separation between the groups. This leads to the *silhouette* score, which is implemented already in scikit-learn. A silhouette score close to +1 indicates very efficient grouping. A silhouette close to 0 indicates that groups may not be present. A negative silhouette score indicates that the groups are not only "doubtful", but ill defined. A loop iterating over different cluster numbers is implemented in the data analysis notebook to compute this score for a range of cluster numbers. We find:
 
 
+![Silhouette vs k ](notebooks/silhouette_plot.png)
+
 which indicates that, in fact, the optimum number of clusters is 1, that is, all the molecules that we have are equally similar (or dissimilar), and there is no exploitable structure in our dataset.
 
 
